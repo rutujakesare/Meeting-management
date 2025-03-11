@@ -12,7 +12,7 @@ function bookMeeting(meetingId) {
         return;
     }
 
-    fetch("http://localhost:5000/api/book", {
+    fetch("http://localhost:2000/api/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, meetingId })
@@ -32,7 +32,7 @@ function bookMeeting(meetingId) {
 
 
 function cancelBooking(bookingId) {
-    fetch("http://localhost:5000/api/cancel", {
+    fetch("http://localhost:2000/api/cancel", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ bookingId })
@@ -47,7 +47,7 @@ function cancelBooking(bookingId) {
 }
 
 function fetchMeetings() {
-    fetch("http://localhost:5000/api/meetings")
+    fetch("http://localhost:2000/api/meetings")
         .then(res => res.json())
         .then(data => {
             const meetingsDiv = document.getElementById("meetings");
@@ -65,7 +65,7 @@ function fetchMeetings() {
 
 
 function fetchBookings() {
-    fetch("http://localhost:5000/api/bookings")
+    fetch("http://localhost:2000/api/bookings")
         .then(res => res.json())
         .then(data => {
             const bookingsDiv = document.getElementById("bookings");
@@ -86,4 +86,3 @@ function fetchBookings() {
         })
         .catch(error => console.error("Error fetching bookings:", error));
 }
-

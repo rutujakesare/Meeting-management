@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 // Start Server
-const PORT = 5000;
+const PORT = 2000;
 
 sequelize.sync()
   .then(() => {
@@ -31,4 +31,3 @@ sequelize.sync()
   .catch(() => {
     console.error("Database connection error");
   });
-
